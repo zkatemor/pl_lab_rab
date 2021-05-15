@@ -604,7 +604,7 @@ void compress_ISXTXT()                            /* Программа упло
    {
     for ( I2 = 0 ; I2 < 80 ; I2++ )
      if ( ISXTXT [ I1 ][ I2 ] != '\x0' ) {
-                if ( (ISXTXT [ I1 ][ I2 ] == ' ' || ISXTXT[I1][I2] == '\n') &&
+        if (ISXTXT [ I1 ][ I2 ] == ' ' &&
 	   ( PREDSYM == ' ' || PREDSYM == ';' ||
 	     PREDSYM == ')' || PREDSYM == ':' ||
 	     PREDSYM == '('
@@ -1293,7 +1293,7 @@ int AVI2() {
           strcpy(ASS_CARD._BUFCARD.OPERAND, "@RRAB,");
           strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[IFORMT - 1]);
           ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
-          memcpy(ASS_CARD._BUFCARD.COMM, "Формирование промежуточного значение", 31);
+          memcpy(ASS_CARD._BUFCARD.COMM, "Формирование", 12);
           ZKARD();
 
           return 0;
@@ -1311,7 +1311,7 @@ int AVI2() {
           strcpy(ASS_CARD._BUFCARD.OPERAND, "@RRAB,");
           strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[IFORMT - 1]);
           ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
-          memcpy(ASS_CARD._BUFCARD.COMM, "Формирование промежуточного значение", 30);
+          memcpy(ASS_CARD._BUFCARD.COMM, "Формирование", 12);
           ZKARD();
 
           return 0;
@@ -1548,7 +1548,7 @@ int OPA2() {
         strcpy(ASS_CARD._BUFCARD.OPERAND, "@RRAB,");
         strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[0]);
         ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
-        memcpy(ASS_CARD._BUFCARD.COMM, "Формирование ариф. выражения", 28);
+        memcpy(ASS_CARD._BUFCARD.COMM, "Формирование а", 14);
         ZKARD();
 
         return 0;
@@ -1558,7 +1558,7 @@ int OPA2() {
         strcpy(ASS_CARD._BUFCARD.OPERAND, "@RRAB,");
         strcat(ASS_CARD._BUFCARD.OPERAND, FORMT[0]);
         ASS_CARD._BUFCARD.OPERAND[strlen(ASS_CARD._BUFCARD.OPERAND)] = ' ';
-        memcpy(ASS_CARD._BUFCARD.COMM, "Формирование ариф. выражения", 28);
+        memcpy(ASS_CARD._BUFCARD.COMM, "Формирование а", 14);
         ZKARD();
 
         return 0;
@@ -1617,20 +1617,20 @@ int OPR2 ()
   memcpy ( ASS_CARD._BUFCARD.OPERAC, "START", 5 );/* достраиваем код и опе- */
   memcpy ( ASS_CARD._BUFCARD.OPERAND, "0", 1 );   /* ранды  в  START-псевдо-*/
   memcpy ( ASS_CARD._BUFCARD.COMM,                /* операции Ассемблера    */
-		      "Начало программы", 16 );
+		      "Начало п", 8 );
   ZKARD ();                                       /* запоминаем карту Ассем-*/
 						  /* блера                  */
 
   memcpy ( ASS_CARD._BUFCARD.OPERAC, "BALR", 4 ); /* формируем BALR-операцию*/
   memcpy ( ASS_CARD._BUFCARD.OPERAND,             /* Ассемблера             */
-				  "RBASE,0", 7 );
+				  "@RBASE,0", 8 );
   memcpy ( ASS_CARD._BUFCARD.COMM,
-		  "Загрузить регистр базы", 22 );
+		  "Загр", 4 );
   ZKARD ();                                       /* и запоминаем ее        */
 
   memcpy ( ASS_CARD._BUFCARD.OPERAC, "USING", 5 );/* формируем USING-псевдо-*/
   memcpy ( ASS_CARD._BUFCARD.OPERAND,             /* операцию Ассемблера    */
-				   "*,RBASE", 7 );
+				   "*,@RBASE", 8 );
   memcpy ( ASS_CARD._BUFCARD.COMM,
 		  "Назначить регистр базой", 23 );
   ZKARD ();                                       /* и запоминаем ее        */
