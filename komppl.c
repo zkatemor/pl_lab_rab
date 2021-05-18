@@ -1495,12 +1495,12 @@ int OEN2() {
 
   memcpy(ASS_CARD._BUFCARD.METKA, "@RBASE", 6);
   memcpy(ASS_CARD._BUFCARD.OPERAC, "EQU", 3);
-  memcpy(ASS_CARD._BUFCARD.OPERAND, "15", 2);
+  memcpy(ASS_CARD._BUFCARD.OPERAND, "5", 2);
   ZKARD();
 
   memcpy(ASS_CARD._BUFCARD.METKA, "@RRAB", 5);
   memcpy(ASS_CARD._BUFCARD.OPERAC, "EQU", 3);
-  memcpy(ASS_CARD._BUFCARD.OPERAND, "4", 1);
+  memcpy(ASS_CARD._BUFCARD.OPERAND, "0", 1);
 
   ZKARD();
 
